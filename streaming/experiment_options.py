@@ -4,15 +4,15 @@ import argparse
 @dataclasses.dataclass
 class ExperimentOptions:
     """ REQUIRED """
-    name: str = ''  # The name of the current experiment, used for saving checkpoints
-    num_classes: int = 1  # The number of classes in the task
+    name: str = 'Final_Results'  # The name of the current experiment, used for saving checkpoints
+    num_classes: int = 2  # The number of classes in the task
 
-    train_csv: str = ''  # The filenames (without extension) and labels of train set
-    val_csv: str = ''  # The filenames (without extension) and labels of validation or test set
-    data_dir: str = ''  # The directory where the images reside
+    train_csv: str = '/kaggle/input/train/train'  # The filenames (without extension) and labels of train set
+    val_csv: str = '/kaggle/input/valaid/val'  # The filenames (without extension) and labels of validation or test set
+    data_dir: str = '/kaggle/input/croppedd/new_cropped_images-Copy'  # The directory where the images reside
     copy_dir: str = ''  # If convert_to_vips is on, this is the directory where the .v files are saved
-    filetype: str = '.jpg'  #  The file-extension of the images
-    save_dir: str = ''  # Where to save the checkpoints
+    filetype: str = '.png'  #  The file-extension of the images
+    save_dir: str = '/kaggle/working/'  # Where to save the checkpoints
 
     """ NOT REQUIRED """
     train_set_size: int = -1  # Sometimes you want to test on smaller train-set you can limit the n-images here
